@@ -1,0 +1,336 @@
+/* GhostLink 8K — 营销型博客样式 */
+:root {
+  --bg: #0a0b0d;
+  --bg-card: #12141a;
+  --bg-elevated: #181b22;
+  --text: #e4e6eb;
+  --text-muted: #9ca3af;
+  --accent: #00d4aa;
+  --accent-dim: rgba(0, 212, 170, 0.15);
+  --border: #2a2d36;
+  --font: "Noto Sans SC", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 11, 13, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo-accent {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: 80px 20px 70px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-dim) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  text-align: center;
+}
+
+.hero-tagline {
+  font-size: 0.85rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Sections */
+.section {
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-intro {
+  border-top: none;
+}
+
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: var(--text);
+}
+
+.section-lead {
+  color: var(--text-muted);
+  margin: 0 0 20px;
+  font-size: 0.98rem;
+}
+
+.section-desc {
+  color: var(--text-muted);
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+}
+
+.section-title + .section-lead {
+  margin-top: 8px;
+}
+
+/* Lists */
+.pain-list,
+.feature-list,
+.spec-list {
+  margin: 0 0 32px;
+  padding-left: 1.35em;
+  color: var(--text);
+}
+
+.pain-list li,
+.feature-list li,
+.spec-list li {
+  margin-bottom: 12px;
+}
+
+.numbered-list {
+  margin: 0 0 32px;
+  padding-left: 1.5em;
+  color: var(--text);
+}
+
+.numbered-list li {
+  margin-bottom: 12px;
+}
+
+/* Promise block */
+.promise-block {
+  margin: 40px 0 0;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+}
+
+.promise-block h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.promise-block p {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.promise-block p:last-child {
+  margin-bottom: 0;
+}
+
+.promise-block .slogan {
+  margin-top: 12px;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Timeline 进展 */
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.timeline-content h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* List cards (捐赠 / 预约) */
+.list-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.donor-list,
+.waitlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.donor-list li,
+.waitlist li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.donor-list li:last-child,
+.waitlist li:last-child {
+  border-bottom: none;
+}
+
+.donor-list .name,
+.waitlist .name {
+  font-weight: 500;
+}
+
+.donor-list .date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.waitlist .ord {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+/* Footer */
+.site-footer {
+  padding: 32px 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .nav {
+    gap: 16px;
+  }
+
+  .nav a {
+    font-size: 0.85rem;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .timeline-date {
+    font-size: 0.8rem;
+  }
+}
