@@ -103,27 +103,59 @@ body {
   text-align: center;
 }
 
+.hero-title {
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  font-weight: 700;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
 .hero-tagline {
   font-size: 0.8rem;
   color: var(--accent);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin: 0 0 0;
   font-weight: 600;
 }
 
-.hero-title {
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
-  font-weight: 700;
-  margin: 0 0 8px;
-  letter-spacing: -0.02em;
+.hero-video-wrap {
+  margin-top: 36px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  overflow: hidden;
 }
 
-.hero-subtitle {
-  font-size: 1.5rem;
-  color: var(--text-muted);
-  font-weight: 500;
+.hero-video {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+}
+
+.hero-video-fallback {
+  padding: 24px 16px;
   margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.hero-video-fallback code {
+  background: var(--bg-elevated);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
 }
 
 /* Sections */
@@ -290,47 +322,164 @@ body {
   color: var(--text-muted);
 }
 
-/* List cards (捐赠 / 预约) */
-.list-card {
-  background: var(--bg-card);
+/* 图片左右滚动 */
+.img-scroll-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  margin: 0 -20px;
+  padding: 0 20px 8px;
+}
+
+.img-scroll {
+  display: flex;
+  gap: 16px;
+  padding: 8px 0 24px;
+  width: max-content;
+}
+
+.img-scroll-item {
+  scroll-snap-align: start;
+  height: 200px;
+  min-width: 200px;
+  max-width: 320px;
+  flex-shrink: 0;
   border: 1px solid var(--border);
-  padding: 20px 24px;
-  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-}
-
-.donor-list,
-.waitlist {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.donor-list li,
-.waitlist li {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
 }
 
-.donor-list li:last-child,
-.waitlist li:last-child {
+.img-scroll-item img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.img-scroll-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: var(--bg-card);
+}
+
+/* 捐赠者：编号 金额 头像 留言 表情包 */
+.donor-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.donor-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.donor-table th,
+.donor-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.donor-table th {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.donor-table tbody tr:last-child td {
   border-bottom: none;
 }
 
-.donor-list .name,
-.waitlist .name {
-  font-weight: 500;
-}
-
-.donor-list .date {
-  font-size: 0.85rem;
+.donor-table .donor-num {
+  width: 56px;
+  font-weight: 600;
   color: var(--text-muted);
-  margin-left: auto;
 }
 
-.waitlist .ord {
+.donor-table .donor-amount {
+  width: 88px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.donor-table .donor-avatar {
+  width: 56px;
+  padding: 8px;
+  position: relative;
+}
+
+.donor-table .donor-avatar img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.donor-avatar-fallback {
+  display: none;
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  align-items: center;
+  justify-content: center;
+}
+
+.donor-table .donor-msg {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.donor-table .donor-emoji {
+  width: 80px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* 预约者：编号 头像 名称，一排3个 */
+.waitlist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.waitlist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.waitlist-ord {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -341,6 +490,57 @@ body {
   font-size: 0.85rem;
   font-weight: 600;
   clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+}
+
+.waitlist-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.waitlist-avatar img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.waitlist-avatar img:not([src]) {
+  display: none !important;
+}
+
+.waitlist-avatar img[src] {
+  display: block;
+}
+
+.waitlist-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+}
+
+.waitlist-avatar img[src] ~ .waitlist-avatar-placeholder {
+  display: none;
+}
+
+.waitlist-name {
+  font-weight: 500;
+  color: var(--text);
+  font-size: 0.95rem;
+  text-align: center;
+  word-break: break-all;
 }
 
 /* Footer */
@@ -373,5 +573,16 @@ body {
 
   .timeline-date {
     font-size: 0.8rem;
+  }
+
+  .waitlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .waitlist-grid {
+    grid-template-columns: 1fr;
   }
 }

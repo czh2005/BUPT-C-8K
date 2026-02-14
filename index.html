@@ -29,9 +29,15 @@
     <section class="hero">
       <div class="hero-bg"></div>
       <div class="container hero-inner">
+        <h1 class="hero-title">BUPT-C-8K</h1>
+        <p class="hero-subtitle">终极物理层隐身鼠标加速器</p>
         <p class="hero-tagline">真·物理透传 | 8K 竞技级 | 驱动全兼容 | 反作弊零风险</p>
-        <h1 class="hero-title">终极物理层隐身鼠标加速器</h1>
-        <p class="hero-subtitle">BUPT-C-8K</p>
+        <div class="hero-video-wrap">
+          <video class="hero-video" src="展示视频/video.mp4" controls playsinline preload="metadata" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            您的浏览器不支持视频播放
+          </video>
+          <p class="hero-video-fallback" style="display:none;">请将展示视频放在 <code>展示视频/video.mp4</code>，或修改本页视频地址</p>
+        </div>
       </div>
     </section>
 
@@ -69,7 +75,7 @@
 
         <h2 class="section-title">物理规格与量产保障</h2>
         <ul class="spec-list">
-          <li><strong>极致体积</strong>：仅有 25mm × 16mm，可轻松集成在鼠标线控或极小的外壳内。</li>
+          <li><strong>极致体积</strong>：仅有 50mm × 50mm，（好吧其实不小哈哈哈哈哈）可轻松集成在鼠标线控或极小的外壳内。</li>
           <li><strong>职业级用料</strong>：采用高速物理层芯片与独立处理单元，支持 24 小时高强度竞技不丢包、不掉帧。</li>
         </ul>
 
@@ -103,6 +109,13 @@
           <article class="timeline-item">
             <time class="timeline-date">2025-02-14</time>
             <div class="timeline-content">
+              <h3>硬件 PCB 打样完成，下一步软件开发</h3>
+              <p>硬件部分 PCB 打样完成，器件已嘉立创下单；由于过年因素暂时拿不到 PCB，下一步进行软件开发。</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <time class="timeline-date">2025-02-14</time>
+            <div class="timeline-content">
               <h3>官网与博客上线</h3>
               <p>正式上线产品介绍页与进展/捐赠/预约名单，便于潜在用户与捐赠者了解项目状态。</p>
             </div>
@@ -117,33 +130,147 @@
           </article>
           -->
         </div>
-      </div>
-    </section>
 
-    <!-- 捐赠者名单 -->
-    <section id="donors" class="section section-donors">
-      <div class="container">
-        <h2 class="section-title">捐赠致谢</h2>
-        <p class="section-desc">感谢以下朋友对项目的支持（按时间排序，匿名可选）。</p>
-        <div class="list-card">
-          <ul class="donor-list">
-            <li><span class="name">（暂无记录）</span></li>
-            <!-- 追加示例：<li><span class="name">昵称</span> <span class="date">2025-02-14</span></li> -->
-          </ul>
+        <p class="section-desc" style="margin-top: 32px;">硬件实拍 / 设计图</p>
+        <div class="img-scroll-wrap">
+          <div class="img-scroll">
+            <div class="img-scroll-item">
+              <img src="硬件图片/1.png" alt="PCB 实物" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';">
+              <span class="img-scroll-fallback">暂无图片</span>
+            </div>
+            <div class="img-scroll-item">
+              <img src="硬件图片/2.png" alt="PCB 布局" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';">
+              <span class="img-scroll-fallback">暂无图片</span>
+            </div>
+            <div class="img-scroll-item">
+              <img src="硬件图片/3.png" alt="原理图" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';">
+              <span class="img-scroll-fallback">暂无图片</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 预约项目上线名单 -->
+    <!-- 捐赠者名单：编号 金额 头像 留言 （表情包可选） -->
+    <section id="donors" class="section section-donors">
+      <div class="container">
+        <h2 class="section-title">捐赠致谢</h2>
+        <p class="section-desc">感谢以下朋友对项目的支持（按编号排序）。</p>
+        <div class="donor-table-wrap">
+          <table class="donor-table">
+            <thead>
+              <tr>
+                <th>编号</th>
+                <th>金额</th>
+                <th>头像</th>
+                <th>留言</th>
+                <th>表情包</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="donor-num">1</td>
+                <td class="donor-amount">28.8 元</td>
+                <td class="donor-avatar"><img src="赞助者头像/赞助1.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="donor-avatar-fallback">头像</span></td>
+                <td class="donor-msg">支持科研，奋发图强</td>
+                <td class="donor-emoji">—</td>
+              </tr>
+              <!-- 追加示例：
+              <tr>
+                <td class="donor-num">2</td>
+                <td class="donor-amount">50 元</td>
+                <td class="donor-avatar"><img src="赞助者头像/赞助2.jpg" alt=""></td>
+                <td class="donor-msg">留言内容</td>
+                <td class="donor-emoji">可选或 —</td>
+              </tr>
+              -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 预约项目上线：编号 头像 名称，一排3个 -->
     <section id="waitlist" class="section section-waitlist">
       <div class="container">
         <h2 class="section-title">预约项目上线</h2>
         <p class="section-desc">预约产品上线后优先通知/优先购买资格（按预约顺序）。</p>
-        <div class="list-card">
-          <ul class="waitlist">
-            <li><span class="ord">1</span><span class="name">（暂无记录）</span></li>
-            <!-- 追加示例：<li><span class="ord">1</span><span class="name">昵称/备注</span></li> -->
-          </ul>
+        <div class="waitlist-grid">
+          <div class="waitlist-item">
+            <span class="waitlist-ord">1</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者1号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">M</span></div>
+            <span class="waitlist-name">Macrbar</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">2</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者2号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">宴</span></div>
+            <span class="waitlist-name">宴清^</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">3</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者3号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">d</span></div>
+            <span class="waitlist-name">dylsnbb</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">4</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者4号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">S</span></div>
+            <span class="waitlist-name">S</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">5</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者5号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">匿</span></div>
+            <span class="waitlist-name">匿名</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">6</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者6号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">飞</span></div>
+            <span class="waitlist-name">飞</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">7</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者7号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">D</span></div>
+            <span class="waitlist-name">D</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">8</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者8号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">L</span></div>
+            <span class="waitlist-name">L.12</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">9</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者9号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">Q</span></div>
+            <span class="waitlist-name">QZJ666</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">10</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者10号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">l</span></div>
+            <span class="waitlist-name">lcy</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">11</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者11号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">陈</span></div>
+            <span class="waitlist-name">陈抟</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">12</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者12号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">H</span></div>
+            <span class="waitlist-name">HHXL</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">13</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者13号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">A</span></div>
+            <span class="waitlist-name">Autism</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">14</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者14号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">清</span></div>
+            <span class="waitlist-name">清晨的这场雨</span>
+          </div>
+          <div class="waitlist-item">
+            <span class="waitlist-ord">15</span>
+            <div class="waitlist-avatar"><img src="预约者头像/预约者15号.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';"><span class="waitlist-avatar-placeholder">选</span></div>
+            <span class="waitlist-name">选</span>
+          </div>
         </div>
       </div>
     </section>

@@ -29,7 +29,7 @@ git config user.email "czh2005@users.noreply.github.com"
 git config user.name "czh2005"
 
 echo 添加并提交更改...
-git add index.html styles.css script.js README.md deploy.bat
+git add index.html styles.css script.js README.md deploy.bat 硬件图片 赞助者头像 预约者头像 展示视频
 git status
 git commit -m "Update: GhostLink 8K 官网与博客" 2>nul || git commit -m "Initial: GhostLink 8K 官网与博客"
 echo 正在推送到 GitHub...
