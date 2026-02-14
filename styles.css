@@ -1,13 +1,14 @@
-/* GhostLink 8K — 营销型博客样式 */
+/* BUPT-C-8K — 无畏契约风格 */
 :root {
-  --bg: #0a0b0d;
-  --bg-card: #12141a;
-  --bg-elevated: #181b22;
-  --text: #e4e6eb;
-  --text-muted: #9ca3af;
-  --accent: #00d4aa;
-  --accent-dim: rgba(0, 212, 170, 0.15);
-  --border: #2a2d36;
+  --bg: #0d0d0f;
+  --bg-card: #141518;
+  --bg-elevated: #1a1b1f;
+  --text: #ece8e1;
+  --text-muted: #8b8685;
+  --accent: #ff4655;
+  --accent-dim: rgba(255, 70, 85, 0.18);
+  --accent-gold: #c8aa6e;
+  --border: #2a2926;
   --font: "Noto Sans SC", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -40,9 +41,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 11, 13, 0.9);
+  background: rgba(13, 13, 15, 0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
 }
 
 .site-header .container {
@@ -91,7 +92,9 @@ body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-dim) 0%, transparent 55%);
+  background:
+    linear-gradient(165deg, transparent 0%, var(--accent-dim) 35%, transparent 70%),
+    radial-gradient(ellipse 90% 50% at 50% 0%, var(--accent-dim) 0%, transparent 55%);
   pointer-events: none;
 }
 
@@ -101,11 +104,12 @@ body {
 }
 
 .hero-tagline {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--accent);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .hero-title {
@@ -134,9 +138,10 @@ body {
 
 .section-title {
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 16px;
   color: var(--text);
+  letter-spacing: 0.02em;
 }
 
 .section-lead {
@@ -180,13 +185,49 @@ body {
   margin-bottom: 12px;
 }
 
+/* 展望 */
+.outlook-card {
+  margin: 24px 0 32px;
+  display: grid;
+  gap: 16px;
+}
+
+.outlook-now,
+.outlook-next {
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+}
+
+.outlook-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.outlook-game {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.outlook-games {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+}
+
 /* Promise block */
 .promise-block {
   margin: 40px 0 0;
   padding: 24px;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
   border-left: 4px solid var(--accent);
 }
 
@@ -253,8 +294,8 @@ body {
 .list-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 20px 24px;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
 }
 
 .donor-list,
@@ -299,13 +340,13 @@ body {
   color: var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
-  border-radius: 8px;
+  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
 }
 
 /* Footer */
 .site-footer {
   padding: 32px 20px;
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--border);
   text-align: center;
 }
 
